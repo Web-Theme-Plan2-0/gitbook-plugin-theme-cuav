@@ -1,43 +1,43 @@
 {
-  "name": "gitbook-plugin-theme-default",
-  "description": "Default theme for GitBook",
+  "name": "gitbook-plugin-theme-cuav",
+  "description": "CUAV theme for GitBook",
+  "keywords": [
+    "cuav",
+    "gitbook",
+    "theme"
+  ],
   "main": "./index.js",
-  "version": "1.0.6",
+  "version": "1.0.0",
   "engines": {
     "gitbook": ">=3.0.0"
   },
   "dependencies": {},
   "devDependencies": {
-    "browserify": "13.1.0",
-    "eslint": "3.6.1",
-    "font-awesome": "4.6.3",
+    "browserify": "14.0.0",
+    "eslint": "3.15.0",
+    "font-awesome": "4.7.0",
     "preboot": "git+https://github.com/mdo/preboot.git#4aab4edd85f076d50609cbe28e4fe66cc0771701",
     "gitbook-logos": "git+https://github.com/GitbookIO/logos.git#2.0.2",
-    "gitbook-markdown-css": "1.0.1",
+    "gitbook-markdown-css": "1.1.0",
     "jquery": "3.1.1",
     "less": "2.7.1",
     "less-plugin-clean-css": "1.5.1",
     "mousetrap": "1.6.0",
-    "uglify-js": "2.7.3"
+    "uglify-js": "2.7.5",
+    "node-sass": "4.5.0"
   },
   "scripts": {
     "prepublish": "./src/build.sh"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GitbookIO/theme-default.git"
+    "url": "https://github.com/cuav/gitbook-plugin-theme-cuav.git"
   },
-  "author": "FriendCode Inc. <contact@gitbook.com>",
+  "author": "黄伟枞. <weicong@cuav.net>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/GitbookIO/theme-default/issues"
+    "url": "https://github.com/cuav/gitbook-plugin-theme-cuav/issues"
   },
-  "contributors": [
-    {
-      "name": "Samy Pessé",
-      "email": "samy@gitbook.com"
-    }
-  ],
   "gitbook": {
     "properties": {
       "styles": {
@@ -74,6 +74,99 @@
         "type": "boolean",
         "title": "Show level indicator in TOC",
         "default": false
+      },
+      "useGitbookIcon": {
+        "type": "boolean",
+        "title": "使用 GitBook 默认的网站 icon",
+        "default": false 
+      },
+      "iconPath": {
+        "type": "string",
+        "title": "使用本地的 icon 图标作为网站的图标"
+      },
+      "showGitBookLink": {
+        "type": "boolean",
+        "title": "在目录底部显示 GitBook 的链接",
+        "default": true
+      },
+      "navbar": {
+        "type": "object",
+        "title": "导航栏配置",
+        "properties": {
+          "brand": {
+            "type": "object",
+            "title": "logo 配置",
+            "properties": {
+              "url": {
+                "type": "string",
+                "title": "点击图片跳转链接",
+                "default": "javascript:;"
+              },
+              "logo": {
+                "type": "object",
+                "title": "logo 图片信息",
+                "properties": {
+                  "alt": {
+                    "type": "string",
+                    "title": "图片不存在是显示的信息"
+                  },
+                  "url": {
+                    "type": "string",
+                    "title": "网络图片路径"
+                  },
+                  "path": {
+                    "type": "string",
+                    "title": "本地图片路径"
+                  }
+                }
+              }
+            }
+          },
+          "nav": {
+            "type": "object",
+            "title": "导航栏菜单",
+            "properties": {
+              "items": {
+                "type": "array",
+                "title": "菜单项",
+                "peoperties": {
+                  "name": {
+                    "type": "string",
+                    "title": "一级菜单显示名称"
+                  },
+                  "url": {
+                    "type": "string",
+                    "title": "点击跳转链接，有二级菜单时无效",
+                    "default": "javascript:;"
+                  },
+                  "links": {
+                    "type": "array",
+                    "title": "二级菜单，如果添加此属性，则表示拥有二级菜单",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "title": "二级菜单显示名称"
+                      },
+                      "url": {
+                        "type": "string",
+                        "title": "点击跳转链接",
+                        "default": "javascript:;"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "navAjaxUrl": {
+            "type": "string",
+            "title": "Ajax 获取 nav 配置的 url，生成顶部下拉菜单"
+          },
+          "footer": {
+            "title": "页脚设置，可以用 html 语法",
+            "type": "string"
+          }
+        }
       }
     }
   }

@@ -1,3 +1,10 @@
+{###
+Modified By 黄伟枞<weicong@cuav.net>
+Modify:
+1. 修改 shortcut icon
+2. 新增 bootstrap_css block
+3. 新增 cuav_css block
+###}
 {% extends "layout.html" %}
 
 {% block head %}
@@ -7,7 +14,17 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ "images/apple-touch-icon-precomposed-152.png"|resolveAsset }}">
-    <link rel="shortcut icon" href="{{ "images/favicon.ico"|resolveAsset }}" type="image/x-icon">
+    {% set cuavConfig = config.pluginsConfig['theme-cuav'] %}
+    {% if cuavConfig.useGitbookIcon %}
+        <link rel="shortcut icon" 
+            href="{{ 'images/gitbook.ico'|resolveAsset }}" type="image/x-icon">
+    {% elif cuavConfig.iconPath %}
+        <link rel="shortcut icon" 
+            href="{{ cuavConfig.iconPath|resolveAsset }}" type="image/x-icon">
+    {% else %}
+        <link rel="shortcut icon" 
+            href="{{ 'images/cuav.ico'|resolveAsset }}" type="image/x-icon">
+    {% endif %}
 {% endblock %}
 
 {% block style %}
@@ -23,6 +40,15 @@
         <link rel="stylesheet" href="{{ style|resolveFile }}">
         {% endif %}
     {% endfor %}
+
+    {% block bootstrap_css %}
+        <link rel="stylesheet" 
+            href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    {% endblock %}
+
+    {% block cuav_css %}
+        <link rel="stylesheet" href="{{ 'cuav-style.css'|resolveAsset }}">
+    {% endblock %}
 {% endblock %}
 
 {% block body %}{% endblock %}

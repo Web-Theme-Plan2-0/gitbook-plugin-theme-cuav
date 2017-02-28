@@ -1,3 +1,12 @@
+{###
+Modified By 黄伟枞<weicong@cuav.net>
+Modify:
+1. 新增 bootstrap_js block
+2. body block 新增 {% include "./includes/navbar.html" %}
+3. 在 book-summary 的 div 前增加 {% include "website/header.html" %}
+4. 将 {% include "website/header.html" %} 从 book_inner block 中移到 
+    book_inner block 之后
+###}
 {% extends "./layout.html" %}
 
 {% block title %}{{ page.title }} · {{ super() }}{% endblock %}
@@ -15,6 +24,12 @@
 {% endblock %}
 
 {% block javascript %}
+    {% block bootstrap_js %}
+        <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.slim.min.js"></script>
+        <script src="//cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script>
+        <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    {% endblock %}
+
     <script src="{{ "gitbook.js"|resolveAsset }}"></script>
     <script src="{{ "theme.js"|resolveAsset }}"></script>
     {% for resource in plugins.resources.js %}
@@ -27,7 +42,9 @@
 {% endblock %}
 
 {% block body %}
+{% include "./includes/navbar.html" %}
 <div class="book">
+    {% include "website/header.html" %}
     <div class="book-summary">
         {% block book_sidebar %}
             {% block search_input %}{% endblock %}
@@ -43,8 +60,6 @@
         {% block book_body %}
             <div class="body-inner">
                 {% block book_inner %}
-                    {% include "website/header.html" %}
-
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             {% block search_results %}
@@ -57,6 +72,7 @@
                         </div>
                     </div>
                 {% endblock %}
+                {% include "./includes/footer.html" %}
             </div>
 
             {% block book_navigation %}
