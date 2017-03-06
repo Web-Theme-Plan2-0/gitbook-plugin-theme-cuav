@@ -20,8 +20,7 @@ limitations under the License.
 	{% set navbar = cuavConfig.navbar %}
 	{% set items = navbar.nav.items %}
 	<nav class="navbar fixed-top navbar-inverse bg-inverse navbar-toggleable-md">
-
-		{% if items or navbar.nav %}
+		{% if items | length or navbar.navAjaxUrl %}
 			<button class="navbar-toggler navbar-toggler-right" type="button" 
 				data-toggle="collapse" data-target="#navbarSupportedContent" 
 				aria-controls="navbarSupportedContent" aria-expanded="false" 
