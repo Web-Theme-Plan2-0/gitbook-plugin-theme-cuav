@@ -47,6 +47,7 @@
     $.ajax(url, {
       type: 'get',
       dataType: 'json',
+      cache: false,
       success: function(data) {
 
         if (!data) {
