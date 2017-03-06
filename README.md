@@ -57,7 +57,7 @@ CUAV 主题，fork [gitbook-plugin-theme-default](https://github.com/GitbookIO/t
                 }
             ]
         },
-        "navAjaxUrl": "http://www.cuav.net",
+        "navAjaxUrl": "/xxx.json",
         "footer": "<a href='http://www.cuav.net'>http://www.cuav.net<a>"
       }
     }
@@ -122,3 +122,12 @@ icon 的地址，如果 `useGitbookIcon` 为 `false` 和 `iconPath` 不指定的
 #### footer
 
 页面底部显示，可以纯文本，也可以是 html 文本；可以用于版权声明，如果设置将在每个页面的底部显示
+
+### 更新内容
+
+---
+
+#### 1.1.1
+
+* Fix: 顶部导航栏没有菜单时，小屏依旧显示菜单按钮。
+* Add: 不缓存 `navAjaxUrl` 获取的 json 文件。
