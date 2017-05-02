@@ -22,13 +22,13 @@
  */
 (function($){
 
-  const gitbook = window.gitbook;
+  var gitbook = window.gitbook;
 
   /**
    * 初始化
    * @function
    */
-  const init = function() {
+  var init = function() {
 
     // TODO 是否需要清空导航栏
 
