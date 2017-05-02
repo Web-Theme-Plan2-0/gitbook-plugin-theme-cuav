@@ -127,6 +127,10 @@ icon 的地址，如果 `useGitbookIcon` 为 `false` 和 `iconPath` 不指定的
 
 ---
 
+#### 1.1.3
+
+* Change: cuav-nav.js 中 const 替换成 var，增强兼容性
+
 #### 1.1.2
 
 * Fix: 修复页脚中错误的 div 结束标签
