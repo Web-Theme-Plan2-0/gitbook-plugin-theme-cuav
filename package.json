@@ -13,17 +13,17 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "browserify": "14.0.0",
-    "eslint": "3.15.0",
-    "font-awesome": "4.7.0",
+    "browserify": "13.1.0",
+    "eslint": "3.6.1",
+    "font-awesome": "4.6.3",
     "preboot": "git+https://github.com/mdo/preboot.git#4aab4edd85f076d50609cbe28e4fe66cc0771701",
     "gitbook-logos": "git+https://github.com/GitbookIO/logos.git#2.0.2",
-    "gitbook-markdown-css": "1.1.0",
+    "gitbook-markdown-css": "1.0.1",
     "jquery": "3.1.1",
     "less": "2.7.1",
     "less-plugin-clean-css": "1.5.1",
     "mousetrap": "1.6.0",
-    "uglify-js": "2.7.5",
+    "uglify-js": "2.7.3",
     "node-sass": "4.5.0"
   },
   "scripts": {
@@ -38,6 +38,12 @@
   "bugs": {
     "url": "https://github.com/cuav/gitbook-plugin-theme-cuav/issues"
   },
+  "contributors": [
+    {
+      "name": "Weicong Huang",
+      "email": "weicong@cuav.net"
+    }
+  ],
   "gitbook": {
     "properties": {
       "styles": {
@@ -78,7 +84,7 @@
       "useGitbookIcon": {
         "type": "boolean",
         "title": "使用 GitBook 默认的网站 icon",
-        "default": false 
+        "default": false
       },
       "iconPath": {
         "type": "string",
