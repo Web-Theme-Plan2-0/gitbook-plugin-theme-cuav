@@ -13,7 +13,7 @@ Modify:
             {% elif article.url %}
                 <a target="_blank" href="{{ article.url }}">
             {% elif article.path and article.path|last=="\/" %}
-                <a href="{{ article.path|truncate(article.path|length-1), True, '') }}">
+                <a href="{{ article.path|truncate(article.path|length-1, True, '') }}">
             {% else %}
                 <span>
             {% endif %}

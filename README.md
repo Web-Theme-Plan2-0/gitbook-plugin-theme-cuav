@@ -126,6 +126,9 @@ icon 的地址，如果 `useGitbookIcon` 为 `false` 和 `iconPath` 不指定的
 ### 更新内容
 
 ---
+#### 1.1.5
+
+* Fix: 目录链接裁剪错误
 
 #### 1.1.4
 
