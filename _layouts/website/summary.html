@@ -3,6 +3,7 @@ Modified By 黄伟枞<weicong@cuav.net>
 Modify:
 1. 修改插件获取的名字，将 theme-default 修改为 theme-cuav
 2. 增加是否在 summary 底部显示 GitBook 链接
+3. 增加链接是本地目录，但不存在时依旧显示链接
 ###}
 {% macro articles(_articles) %}
     {% for article in _articles %}
@@ -11,6 +12,8 @@ Modify:
                 <a href="{{ article.path|resolveFile }}{{ article.anchor }}">
             {% elif article.url %}
                 <a target="_blank" href="{{ article.url }}">
+            {% elif article.path and article.path|last=="\/" %}
+                <a href="{{ article.path|truncate(article.path|length-1), True, '') }}">
             {% else %}
                 <span>
             {% endif %}

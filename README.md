@@ -127,6 +127,10 @@ icon 的地址，如果 `useGitbookIcon` 为 `false` 和 `iconPath` 不指定的
 
 ---
 
+#### 1.1.4
+
+* Add: 如果目录的链接是本地目录，但不存在时依旧显示链接
+
 #### 1.1.3
 
 * Change: cuav-nav.js 中 const 替换成 var，增强兼容性
